@@ -1,10 +1,15 @@
+import {Link} from "react-router";
+
 function MarketBlock({ID, Name, Probability, ImageLink}) {
     return(
         <div className="bg-dark-subtle p-3">
-            <img src={ImageLink} alt="error: image not found" width="200px" height="2OOpx"/>
+            <img src={ImageLink} alt="error: not found" width="650px" height="auto"/>
             <h4>{Name}</h4>
             <h6>{"Pravděpodobnost: " + Probability + "%"}</h6>
-            <button className="btn btn-primary">Vsadit si</button>      
+            <h6>{"ID: " + ID}</h6>
+            <Link to={`/markets/${ID}`}>
+                <btn className="btn btn-primary">Vsaď si</btn>
+            </Link>
         </div>
     )
 }

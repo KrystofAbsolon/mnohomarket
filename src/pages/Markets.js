@@ -1,6 +1,6 @@
 import MarketBlock from "../components/MarketBlock"
 
-function Trending({markets}) {
+function Markets({markets}) {
     if(markets.length !== 0) {
         return (
             <div className="rounded-3 p-3">
@@ -8,7 +8,7 @@ function Trending({markets}) {
                     {markets.map((m) => (
                     <div className="col-12 col-md-6" key={m.ID}>
                         <MarketBlock
-                        Id={m.ID}
+                        ID={m.ID}
                         Name={m.Name}
                         Probability={m.Probability}
                         ImageLink={m.ImageLink}
@@ -24,4 +24,4 @@ function Trending({markets}) {
     }
 }
 
-export default Trending;
+export default Markets;

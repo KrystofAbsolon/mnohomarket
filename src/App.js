@@ -2,7 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import {Link, Routes, Route, Router} from "react-router";
 import Home from './pages/Home';
-import Trending from './pages/Trending';
+import Market from './pages/Market'
+import Markets from './pages/Markets';
 import { useState, useEffect } from 'react';
 
 
@@ -20,13 +21,14 @@ function App() {
         <nav class="navbar navbar-expand-md navbar-dark bg-dark-subtle p-3">
           <Link class="gradient-text display-5 me-2" to={"/"}>😇MnhoMarket</Link>
           <div className="">
-            <Link class="display-6" to={"/trending"}>Trending</Link>
+            <Link class="display-6" to={"/markets"}>Markets</Link>
           </div>
         </nav>
         <br/>
         <Routes>
             <Route path='/' element={<Home/>}/>
-            <Route path='/trending' element={<Trending markets={markets}/>}/>
+            <Route path='/markets/:id' element={<Market/>}/>
+            <Route path='/markets' element={<Markets markets={markets}/>}/>
         </Routes>
     </article>
   );
