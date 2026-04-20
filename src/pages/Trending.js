@@ -10,7 +10,7 @@ function Trending({markets}) {
                         <MarketBlock
                         Id={m.ID}
                         Name={m.Name}
-                        Probabilty={m.Probabilty}
+                        Probability={m.Probability}
                         ImageLink={m.ImageLink}
                         />
                     </div>
