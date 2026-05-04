@@ -12,6 +12,8 @@ function Markets({markets}) {
                         Name={m.Name}
                         Probability={m.Probability}
                         ImageLink={m.ImageLink}
+                        YesBets={m.YesBets}
+                        NoBets={m.NoBets}
                         />
                     </div>
                     ))}
