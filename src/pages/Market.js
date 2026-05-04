@@ -53,7 +53,15 @@ function Market() {
                     <h1>{Name}</h1>
                     <p>Pravděpodobnost: {Probability}%</p>
                     <p>ID trhu: {ID}</p>
-                    <p>Bets: {YesBets} vs. {NoBets}</p>
+                    <p>{"Bets: "}
+                        <span class="green-text">
+                            {YesBets} 
+                        </span>
+                        {" vs. "}
+                        <span class="red-text">
+                            {NoBets}
+                        </span>
+                    </p>
                     <div>
                         <button className="btn btn-success" onClick={incrementYes} style={{marginRight: 10}}>ANO({yesPrice})</button>
                         <button className="btn btn-danger" onClick={incrementNo}>NE({noPrice})</button>

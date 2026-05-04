@@ -6,15 +6,14 @@ import Market from './pages/Market'
 import Markets from './pages/Markets';
 import { useState, useEffect } from 'react';
 
-
 function App() {
-  const [markets, setMarkets] = useState([])
+  const [markets, setMarkets] = useState([]);
+
   useEffect(() => {
     fetch("http://localhost:8080/api/markets")
       .then(response => response.json())
       .then(data => setMarkets(data));
   }, []);
-
 
   return (
     <article class="container-fluid">
