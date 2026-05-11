@@ -1,7 +1,7 @@
 import { useParams } from "react-router";
 import { useState, useEffect } from 'react';
 
-function Market() {
+function Market({credit, changeCredit}) {
     const {id} = useParams();
         const [ID, setID] = useState();
         const [Name, setName] = useState();
@@ -27,23 +27,33 @@ function Market() {
     }, [id]);
 
     function incrementYes() {
-        fetch(`http://localhost:8080/api/betyes/${ID}`, {
-            method: "POST"
-        })
-        .then(res => res.json())
-        .then(() => {
-            setYesBets(prev => prev + 1);
-        });
+        if(credit >= yesPrice) {
+            changeCredit(-yesPrice);
+            fetch(`http://localhost:8080/api/betyes/${ID}`, {
+                method: "POST"
+            })
+            .then(res => res.json())
+            .then(() => {
+                setYesBets(prev => prev + 1);
+            });
+        }
+        else
+            window.alert("Broke");
     }
 
     function incrementNo() {
-        fetch(`http://localhost:8080/api/betno/${ID}`, {
-            method: "POST"
-        })
-        .then(res => res.json())
-        .then(() => {
-            setNoBets(prev => prev + 1);
-        });
+        if(credit >= noPrice) {
+            changeCredit(-noPrice);
+            fetch(`http://localhost:8080/api/betno/${ID}`, {
+                method: "POST"
+            })
+            .then(res => res.json())
+            .then(() => {
+                setNoBets(prev => prev + 1);
+            });
+        }
+        else
+            window.alert("Broke");
     }
 
     return (
