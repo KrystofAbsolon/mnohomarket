@@ -39,10 +39,10 @@ function App() {
   return (
     <article class="container-fluid">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark-subtle p-2 gap-2">
-          <Link class="gradient-text display-5 me-2" to={"/"}>😇MnhoMarket</Link>
+          <Link class="gradient-text display-5 me-2 text-decoration-none" to={"/"}>😇MnhoMarket</Link>
           <div className="d-flex gap-2">
-            <Link class="display-6" to={"/markets"}>Markets</Link>
-            <Link class="display-6" to={"/credit"}>Credit</Link>
+            <Link class="display-6 text-decoration-none" to={"/markets"}>Markets</Link>
+            <Link class="display-6 text-decoration-none" to={"/credit"}>Credit</Link>
           </div>
           <div className="ms-auto display-6">
             <p>Credit: {credit}$</p>
